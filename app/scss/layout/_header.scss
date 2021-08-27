@@ -1,0 +1,68 @@
+@use '../util/' as *;
+
+.header {
+  position: relative;
+  padding: rem(25) 0;
+  margin-bottom: rem(45);
+
+  @include breakpoint-up(large) {
+    padding: rem(57) rem(25) rem(32);
+  }
+  &__container {
+    max-width: rem(1302);
+  }
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+      width: rem(100);
+
+      @include breakpoint-up(medium) {
+        width: 100%;
+      }
+    }
+
+    &__list {
+      display: flex;
+      align-items: center;
+
+      &--item {
+        font-size: clamp(0.9rem, 1.5vw, 1rem);
+        color: var(--vd-Blue);
+        position: relative;
+
+        &:not(:last-child) {
+          margin-right: rem(21);
+
+          @include breakpoint-up(large) {
+            margin-right: rem(56);
+          }
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: rem(-5);
+          right: 0;
+          width: 100%;
+          height: rem(2);
+          background-color: var(--vd-Blue);
+          transform: scale(0) translateY(-0.5625rem);
+          opacity: 0;
+          transition: all 350ms ease;
+        }
+
+        @include breakpoint-up(medium) {
+          &:hover {
+            &::before {
+              transform: scale(1) translateY(0);
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

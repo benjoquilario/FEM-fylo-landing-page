@@ -1,0 +1,299 @@
+@use '../util/' as *;
+
+.hero {
+  position: relative;
+  margin-bottom: rem(150);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: rem(1319);
+
+    @media (min-width: 50em) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__image {
+    margin-bottom: rem(20);
+    @include breakpoint-up(medium) {
+      flex: 1;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include breakpoint-up(medium) {
+      text-align: left;
+      flex: 1;
+    }
+    @include breakpoint-up(large) {
+      margin-top: rem(-77);
+    }
+  }
+
+  &__form {
+    margin-top: rem(27);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+
+    @include breakpoint-up(medium) {
+      flex-direction: row;
+    }
+    &--error {
+      visibility: hidden;
+      font-size: rem(12);
+      text-align: left;
+      color: red;
+      margin-top: rem(-18);
+      height: 0;
+      opacity: 0;
+
+      @include breakpoint-up(medium) {
+        position: absolute;
+        top: rem(66);
+        left: 0;
+      }
+      &.error {
+        visibility: visible;
+        opacity: 1;
+        height: rem(20);
+      }
+
+      &.success {
+        visibility: visible;
+        opacity: 1;
+        height: rem(20);
+        color: green;
+      }
+    }
+
+    &--input {
+      height: rem(41);
+      border: 1px solid var(--vd-Blue);
+      border-radius: rem(4);
+      margin-bottom: rem(20);
+      padding-left: rem(16);
+      outline: none;
+      background-color: var(--lg-Gray);
+      position: relative;
+
+      @include breakpoint-up(medium) {
+        width: 27vw;
+        height: rem(46);
+        margin: 0;
+      }
+
+      &.error {
+        border: rem(2) solid red;
+      }
+
+      &.success {
+        border: rem(2) solid green;
+      }
+
+      &:focus {
+        outline: rem(3) dashed var(--d-Blue);
+        outline-offset: rem(3);
+      }
+    }
+  }
+}
+
+.about {
+  position: relative;
+  background-image: url('/images/bg-curve-mobile.svg');
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: rem(174);
+  margin-bottom: rem(19);
+  //background-color: #fafafa;
+
+  @include breakpoint-up(medium) {
+    background-image: url('/images/bg-curve-desktop.svg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    max-width: rem(1307);
+
+    @include breakpoint-up(medium) {
+      flex-direction: row;
+    }
+  }
+  &__image {
+    margin-bottom: rem(70);
+
+    @include breakpoint-up(medium) {
+      flex: 1;
+      order: 2;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint-up(medium) {
+      flex: 1;
+    }
+  }
+
+  &__link {
+    text-align: center;
+    @include breakpoint-up(medium) {
+      text-align: left;
+    }
+    &--see {
+      color: var(--m-Cyan);
+      text-align: center;
+      position: relative;
+
+      &:hover {
+        color: hsl(170, 65%, 53%);
+        &::after {
+          background-color: hsl(170, 65%, 53%);
+        }
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: rem(-5);
+        right: 0;
+        height: rem(2);
+        width: 100%;
+        background-color: var(--m-Cyan);
+      }
+    }
+  }
+
+  &__testimonial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: rem(44) auto 0;
+    max-width: rem(320);
+    box-shadow: 1px 1px rem(10) rgba(0, 0, 0, 0.1);
+    padding: rem(40) rem(15) rem(22) rem(25);
+
+    @include breakpoint-up(medium) {
+      margin: rem(44) 0;
+    }
+    &-text {
+      font-size: rem(15);
+      color: var(--vd-Blue);
+      position: relative;
+
+      &::before {
+        content: url('/images/icon-quotes.svg');
+        position: absolute;
+        top: rem(-23);
+      }
+    }
+    &-author {
+      display: flex;
+      flex-direction: column;
+      margin-left: rem(10);
+    }
+
+    &-wrapper {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 100%;
+      padding-top: rem(20);
+
+      img {
+        border-radius: 50%;
+        width: rem(35);
+      }
+    }
+
+    &-name,
+    &-position {
+      font-size: rem(11);
+    }
+  }
+}
+
+.cta {
+  position: relative;
+  background-color: var(--d-Blue);
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: rem(50) rem(40);
+    text-align: center;
+    max-width: rem(1307);
+
+    @include breakpoint-up(medium) {
+      flex-direction: row;
+      text-align: left;
+      padding: rem(100) rem(40);
+    }
+  }
+
+  &__content {
+    @include breakpoint-down(small) {
+      margin-bottom: rem(20);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__forms {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+  }
+  &__form {
+    &--input {
+      height: rem(41);
+      border: 1px solid var(--vd-Blue);
+      border-radius: rem(4);
+      margin-bottom: rem(20);
+      padding-left: rem(16);
+      outline: none;
+      background-color: var(--lg-Blue);
+      position: relative;
+
+      &.error {
+        border: rem(2) solid red;
+      }
+
+      &.success {
+        border: rem(2) solid green;
+      }
+
+      @include breakpoint-up(medium) {
+        width: 34vw;
+        height: rem(46);
+        margin: 0;
+      }
+
+      &:focus {
+        outline: rem(3) dashed var(--lg-Blue);
+        outline-offset: rem(3);
+      }
+    }
+  }
+}

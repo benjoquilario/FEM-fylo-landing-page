@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path fill="#FFF" d="M18.896 0H1.104C.494 0 0 .494 0 1.104v17.793C0 19.506.494 20 1.104 20h9.58v-7.745H8.076V9.237h2.606V7.01c0-2.583 1.578-3.99 3.883-3.99 1.104 0 2.052.082 2.329.119v2.7h-1.598c-1.254 0-1.496.597-1.496 1.47v1.928h2.989l-.39 3.018h-2.6V20h5.098c.608 0 1.102-.494 1.102-1.104V1.104C20 .494 19.506 0 18.896 0z"/></svg><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29">
+                  <g id="Group_27" data-name="Group 27" transform="translate(-145 -2963)">
+                    <g id="Group_23" data-name="Group 23" transform="translate(161.891 2982)">
+                      <path id="_6f4fa2eb-7945-4441-abaa-5997f0a41715" data-name="6f4fa2eb-7945-4441-abaa-5997f0a41715" d="M5.734,2.329H7.015V.1A16.537,16.537,0,0,0,5.149,0,2.962,2.962,0,0,0,2.038,3.3V5.261H0V7.754H2.038v6.274h2.5V7.755H6.491L6.8,5.261H4.535V3.543c0-.721.195-1.214,1.2-1.214Z" transform="translate(-6 -12)" fill="#fff"></path>
+                    </g>
+                    <g id="Ellipse_73" data-name="Ellipse 73" transform="translate(145 2963)" fill="none" stroke="#fff" stroke-width="1">
+                      <circle cx="14.5" cy="14.5" r="14.5" stroke="none"></circle>
+                      <circle cx="14.5" cy="14.5" r="14" fill="none"></circle>
+                    </g>
+                  </g>
+                </svg>

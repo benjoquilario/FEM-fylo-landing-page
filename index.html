@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Fylo landing page with two column layout</title>
+    <link rel="stylesheet" href="dist/style.css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        color: hsl(228, 45%, 44%);
+      }
+      .attribution a {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container container">
+        <nav class="nav">
+          <a href="#"
+            ><img src="./images/logo.svg" alt="logo of the website" class="nav__logo"
+          /></a>
+          <div class="nav__list">
+            <a href="#" class="nav__list--item">Features</a>
+            <a href="#" class="nav__list--item">Team</a>
+            <a href="#" class="nav__list--item">Sign In</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero__container container">
+          <div class="hero__image">
+            <img src="./images/illustration-1.svg" alt />
+          </div>
+          <div class="hero__content">
+            <h1 class="heading heading--xxl">
+              All your files in one secure location, accessible anywhere.
+            </h1>
+            <p class="paragraph paragraph--hero">
+              Fylo stores your most important files in one secure location. Access them
+              wherever you need, share and collaborate with friends, family, and
+              co-workers.
+            </p>
+            <form action="#" class="hero__form js-form">
+              <input
+                id="email"
+                type="text"
+                name="email"
+                placeholder="Enter your Email..."
+                aria-label="Email"
+                class="js-email hero__form--input"
+              />
+              <span class="hero__form--error">Please check your email</span>
+              <button type="submit" class="btn btn--cta" aria-label="submit">
+                Get Started
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="about">
+        <div class="about__container container">
+          <div class="about__image">
+            <img src="./images/illustration-2.svg" alt />
+          </div>
+          <div class="about__content">
+            <h2 class="heading heading--xl">Stay productive, wherever you are</h2>
+            <p class="paragraph paragraph--about">
+              Never let location be an issue when accessing your files. Fylo has you
+              covered for all of your file storage needs.
+            </p>
+            <p class="paragraph paragraph--about">
+              Securely share files and folders with friends, family and colleagues for
+              live collaboration. No email attachments required!
+            </p>
+            <div class="about__link">
+              <a href="#" class="about__link--see" aria-label="see fylo link"
+                >See how Fylo works
+                <svg
+                  aria-hidden="true"
+                  width="16"
+                  height="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink"
+                >
+                  <defs>
+                    <circle id="b" cx="6" cy="6" r="6" />
+                    <filter
+                      x="-25%"
+                      y="-25%"
+                      width="150%"
+                      height="150%"
+                      filterUnits="objectBoundingBox"
+                      id="a"
+                    >
+                      <feOffset in="SourceAlpha" result="shadowOffsetOuter1" />
+                      <feGaussianBlur
+                        stdDeviation="1"
+                        in="shadowOffsetOuter1"
+                        result="shadowBlurOuter1"
+                      />
+                      <feColorMatrix
+                        values="0 0 0 0 0.239215686 0 0 0 0 0.62745098 0 0 0 0 0.560784314 0 0 0 0.793506567 0"
+                        in="shadowBlurOuter1"
+                      />
+                    </filter>
+                  </defs>
+                  <g fill="none" fill-rule="evenodd">
+                    <g transform="translate(2 2)">
+                      <use fill="#000" filter="url(#a)" xlink:href="#b" />
+                      <use fill="#3DA08F" xlink:href="#b" />
+                    </g>
+                    <path
+                      d="M8.582 6l-.363.35 1.452 1.4H5.333v.5h4.338L8.22 9.65l.363.35 2.074-2z"
+                      fill="#FFF"
+                    />
+                  </g>
+                </svg>
+              </a>
+            </div>
+            <div class="about__testimonial">
+              <p class="about__testimonial-text">
+                Fylo has improved our team productivity by an order of magnitude. Since
+                making the switch our team has become a well-oiled collaboration machine.
+              </p>
+              <div class="about__testimonial-wrapper">
+                <img src="./images/avatar-testimonial.jpg" alt />
+                <div class="about__testimonial-author">
+                  <h3 class="about__testimonial-name">Kyle Burton</h3>
+                  <p class="about__testimonial-position">Founder & CEO, Huddle</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="cta">
+        <div class="cta__container container">
+          <div class="cta__content">
+            <h4 class="heading heading--l">Get early access today</h4>
+            <p class="paragraph paragraph--cta">
+              It only takes a minute to sign up and our free starter tier is extremely
+              generous. If you have any questions, our support team would be happy to help
+              you.
+            </p>
+          </div>
+          <div class="cta__form">
+            <form action="#" class="cta__forms js-form" method="POST">
+              <input
+                id="email-cta"
+                type="text"
+                name="email"
+                placeholder="Enter your Email..."
+                aria-label="Email"
+                class="js-email cta__form--input"
+              />
+              <span class="hero__form--error" style="color: #fff"
+                >Please check your email</span
+              >
+              <button type="submit" class="btn btn--blue" aria-label="submit">
+                Get Started For free
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__container container">
+        <div class="footer__logo">
+          <img src="./images/logo-white.svg" alt="footer logo" />
+        </div>
+        <div class="footer__info">
+          <div class="footer__info-location">
+            <img src="./images/icon-phone.svg" alt="phone number" />
+            <span>Phone: +1-543-123-4567</span>
+          </div>
+          <div>
+            <img src="./images/icon-email.svg" alt="email" />
+            <span>example@fylo.com</span>
+          </div>
+        </div>
+        <nav class="footer__nav">
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#" class="footer__nav-link">About Us</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#" class="footer__nav-link">Jobs</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#" class="footer__nav-link">Press</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#" class="footer__nav-link">Blog</a>
+            </li>
+          </ul>
+          <ul class="footer__nav-list">
+            <li class="footer__nav-item">
+              <a href="#" class="footer__nav-link">Contact</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#" class="footer__nav-link">Terms</a>
+            </li>
+            <li class="footer__nav-item">
+              <a href="#" class="footer__nav-link">Privacy</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="footer__icon">
+          <a href="#" class="social-icon" aria-label="visit us on facebook">
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="29"
+              height="29"
+              viewBox="0 0 29 29"
+            >
+              <g id="Group_27" data-name="Group 27" transform="translate(-145 -2963)">
+                <g id="Group_23" data-name="Group 23" transform="translate(161.891 2982)">
+                  <path
+                    id="_6f4fa2eb-7945-4441-abaa-5997f0a41715"
+                    data-name="6f4fa2eb-7945-4441-abaa-5997f0a41715"
+                    d="M5.734,2.329H7.015V.1A16.537,16.537,0,0,0,5.149,0,2.962,2.962,0,0,0,2.038,3.3V5.261H0V7.754H2.038v6.274h2.5V7.755H6.491L6.8,5.261H4.535V3.543c0-.721.195-1.214,1.2-1.214Z"
+                    transform="translate(-6 -12)"
+                    fill="#fff"
+                  ></path>
+                </g>
+                <g
+                  id="Ellipse_73"
+                  data-name="Ellipse 73"
+                  transform="translate(145 2963)"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1"
+                >
+                  <circle cx="14.5" cy="14.5" r="14.5" stroke="none"></circle>
+                  <circle cx="14.5" cy="14.5" r="14" fill="none"></circle>
+                </g>
+              </g>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="visit us on twitter">
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="29"
+              height="29"
+              viewBox="0 0 29 29"
+            >
+              <g id="Group_26" data-name="Group 26" transform="translate(-187 -2961)">
+                <g id="icon-twitter" transform="translate(451 3178)">
+                  <path
+                    id="icon-twitter-2"
+                    data-name="icon-twitter"
+                    d="M12.841,1.235a5.488,5.488,0,0,1-1.517.416A2.618,2.618,0,0,0,12.482.2a5.261,5.261,0,0,1-1.669.637,2.632,2.632,0,0,0-4.554,1.8,2.711,2.711,0,0,0,.061.6A7.451,7.451,0,0,1,.894.48,2.633,2.633,0,0,0,1.7,4,2.6,2.6,0,0,1,.514,3.674V3.7A2.645,2.645,0,0,0,2.623,6.289a2.627,2.627,0,0,1-.69.087,2.328,2.328,0,0,1-.5-.045,2.657,2.657,0,0,0,2.46,1.834A5.289,5.289,0,0,1,.63,9.288,4.931,4.931,0,0,1,0,9.252a7.411,7.411,0,0,0,4.038,1.181,7.441,7.441,0,0,0,7.492-7.491c0-.116,0-.229-.01-.34A5.252,5.252,0,0,0,12.841,1.235Z"
+                    transform="translate(-256 -208)"
+                    fill="#fff"
+                  ></path>
+                </g>
+                <g
+                  id="Ellipse_74"
+                  data-name="Ellipse 74"
+                  transform="translate(187 2961)"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1"
+                >
+                  <circle cx="14.5" cy="14.5" r="14.5" stroke="none"></circle>
+                  <circle cx="14.5" cy="14.5" r="14" fill="none"></circle>
+                </g>
+              </g>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="visit us on instagram">
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="29"
+              height="29"
+              viewBox="0 0 29 29"
+            >
+              <g id="Group_25" data-name="Group 25" transform="translate(-227 -2960)">
+                <g id="icon-instagram" transform="translate(491 3224)">
+                  <g
+                    id="icon-instagram-2"
+                    data-name="icon-instagram"
+                    transform="translate(-256 -256)"
+                  >
+                    <path
+                      id="Path_348"
+                      data-name="Path 348"
+                      d="M9.627,0H3.572A3.578,3.578,0,0,0,0,3.573V9.628A3.577,3.577,0,0,0,3.572,13.2H9.627A3.577,3.577,0,0,0,13.2,9.628V3.573A3.578,3.578,0,0,0,9.627,0Zm2.8,9.628a2.8,2.8,0,0,1-2.8,2.8H3.572a2.8,2.8,0,0,1-2.8-2.8V3.573a2.8,2.8,0,0,1,2.8-2.8H9.627a2.8,2.8,0,0,1,2.8,2.8Zm0,0"
+                      transform="translate(0.001 0)"
+                      fill="#fff"
+                    ></path>
+                    <path
+                      id="Path_349"
+                      data-name="Path 349"
+                      d="M119.614,116a3.61,3.61,0,1,0,3.61,3.61A3.614,3.614,0,0,0,119.614,116Zm0,6.445a2.836,2.836,0,1,1,2.836-2.836A2.839,2.839,0,0,1,119.614,122.449Zm0,0"
+                      transform="translate(-113.013 -113.013)"
+                      fill="#fff"
+                    ></path>
+                    <path
+                      id="Path_350"
+                      data-name="Path 350"
+                      d="M359.043,66.285a1.067,1.067,0,1,0,1.067,1.067A1.068,1.068,0,0,0,359.043,66.285Zm0,1.359a.293.293,0,1,1,.293-.293A.293.293,0,0,1,359.043,67.644Zm0,0"
+                      transform="translate(-348.747 -64.576)"
+                      fill="#fff"
+                    ></path>
+                  </g>
+                </g>
+                <g
+                  id="Ellipse_75"
+                  data-name="Ellipse 75"
+                  transform="translate(227 2960)"
+                  fill="none"
+                  stroke="#fff"
+                  stroke-width="1"
+                >
+                  <circle cx="14.5" cy="14.5" r="14.5" stroke="none"></circle>
+                  <circle cx="14.5" cy="14.5" r="14" fill="none"></circle>
+                </g>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Benjo Quilario</a>.
+      </p>
+    </footer>
+    <!-- Features
+  Team
+  Sign In
+
+  All your files in one secure location, accessible anywhere.
+
+  Fylo stores your most important files in one secure location. 
+  Access them wherever you need, share and collaborate with friends, 
+  family, and co-workers.
+
+  Get Started
+
+  Stay productive, wherever you are
+
+  Never let location be an issue when accessing your files. Fylo has you 
+  covered for all of your file storage needs.
+
+  Securely share files and folders with friends, family and colleagues for 
+  live collaboration. No email attachments required!
+
+  See how Fylo works
+
+  Fylo has improved our team productivity by an order of magnitude. Since 
+  making the switch our team has become a well-oiled collaboration machine.
+
+  Kyle Burton
+  Founder & CEO, Huddle
+
+  Get early access today
+
+  It only takes a minute to sign up and our free starter tier is extremely generous. 
+  If you have any questions, our support team would be happy to help you.
+
+  Get Started For Free
+
+  Phone: +1-543-123-4567
+  example@fylo.com
+
+  About Us
+  Jobs
+  Press
+  Blog
+
+  Contact Us
+  Terms
+  Privacy
+
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer> -->
+    <script src="./dist/script.js"></script>
+  </body>
+</html>

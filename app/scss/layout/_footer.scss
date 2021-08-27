@@ -1,0 +1,118 @@
+@use '../util/' as *;
+
+.footer {
+  background-color: var(--vd-Blue);
+  padding-top: rem(108);
+
+  &__container {
+    max-width: rem(1307);
+    display: grid;
+    grid-gap: rem(10);
+    grid-template-columns: 3fr 2fr 3fr;
+    grid-template-rows: 1fr rem(232);
+    grid-template-areas:
+      'logo logo logo'
+      'info nav icon';
+
+    @include breakpoint-down(small) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        'logo'
+        'info'
+        'nav'
+        'icon';
+    }
+  }
+  &__logo {
+    grid-area: logo;
+  }
+  &__info {
+    grid-area: info;
+    color: var(--lg-Blue);
+
+    &-location {
+      margin: rem(20) 0;
+    }
+    span {
+      margin-left: rem(20);
+    }
+  }
+
+  &__nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    margin-top: rem(20);
+
+    @include breakpoint-down(small) {
+      flex-direction: column;
+    }
+
+    &-list {
+      margin: 0;
+      padding: 0;
+    }
+    &-item {
+      margin-bottom: rem(14);
+    }
+    &-link {
+      color: var(--lg-Blue);
+      position: relative;
+      &:focus-visible {
+        outline: rem(2) dashed var(--lg-Blue);
+        outline-offset: rem(2);
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: rem(-5);
+        right: 0;
+        width: 100%;
+        height: rem(2);
+        background-color: var(--lg-Blue);
+        transform: scale(0) translateY(-0.5625rem);
+        opacity: 0;
+        transition: all 350ms ease;
+      }
+
+      @include breakpoint-up(medium) {
+        &:hover {
+          &::before {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__icon {
+    grid-area: icon;
+    text-align: center;
+    margin-top: rem(20);
+
+    .social-icon {
+      margin-right: rem(10);
+
+      &:focus {
+        outline: none;
+      }
+
+      &:focus-visible {
+        outline: 2px dashed var(--lg-Blue);
+        outline-offset: 2px;
+      }
+
+      path {
+        transition: fill 0.3s ease;
+      }
+
+      &:hover {
+        path {
+          fill: var(--b-Blue);
+        }
+      }
+    }
+  }
+}

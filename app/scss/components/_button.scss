@@ -1,0 +1,60 @@
+@use '../util/' as *;
+
+.btn {
+  position: relative;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+
+  &:hover {
+    opacity: 0.7;
+    transition: 0.3s ease;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: rem(3) dashed var(--d-Blue);
+    outline-offset: rem(3);
+  }
+  &--blue {
+    background-color: var(--b-Blue);
+    color: var(--lg-Blue);
+    font-size: rem(16);
+    border-radius: rem(4);
+    height: rem(41);
+    margin-top: rem(10);
+
+    &:focus {
+      outline: none;
+    }
+    &:focus-visible {
+      outline: rem(3) dashed var(--lg-Blue);
+      outline-offset: rem(3);
+    }
+    @include breakpoint-up(medium) {
+      width: rem(210);
+      height: rem(46);
+      margin-top: rem(20);
+    }
+  }
+
+  &--cta {
+    background-color: var(--b-Blue);
+    color: var(--lg-Blue);
+    height: rem(41);
+    border-radius: rem(4);
+    margin-top: rem(10);
+    overflow: hidden;
+    font-size: rem(16);
+    position: relative;
+
+    @include breakpoint-up(medium) {
+      margin: 0 rem(20);
+      width: rem(200);
+      height: rem(46);
+    }
+  }
+}
