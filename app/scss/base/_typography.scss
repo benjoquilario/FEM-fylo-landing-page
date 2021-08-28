@@ -54,8 +54,9 @@ a {
   color: var(--d-Blue);
 
   &--hero {
-    font-size: clamp(0.9rem, 3vw, 1.0625rem);
+    font-size: clamp(0.9rem, 3vw, 1.2625rem);
     line-height: rem(20);
+    max-width: 650px;
   }
 
   &--about {

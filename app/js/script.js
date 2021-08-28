@@ -8,64 +8,29 @@ const validateEmail = (email) => {
   return re.test(email);
 };
 
-function checkEmail(event) {
-  event.preventDefault();
-  for (let i = 0; i < errorMessage.length; i++) {
-    if (!validateEmail(event.target.email.value)) {
-      errorMessage[i].classList.add('error');
-      event.target.email.classList.add('error');
-      errorMessage[i].textContent = 'Invalid Email, Please check your email';
-      errorMessage[i].style.animation = 'errorPop 350ms ease';
-      setTimeout(() => {
-        event.target.email.classList.remove('error');
-        errorMessage[i].classList.remove('error');
-        errorMessage[i].style.animation = 'none';
-      }, 3000);
-    } else {
-      errorMessage[i].classList.add('success');
-      event.target.email.classList.add('success');
-      errorMessage[i].textContent = 'Email Sucessfully Submitted';
-      errorMessage[i].style.animation = 'errorPop 350ms ease';
-      setTimeout(() => {
-        event.target.email.classList.remove('success');
-        errorMessage[i].classList.remove('success');
-        errorMessage[i].style.animation = 'none';
-      }, 3000);
-    }
-  }
+function setFormState(input, errorMessage, className, message) {
+  input.classList.add(className);
+  errorMessage.classList.add(className);
+  errorMessage.textContent = message;
+  errorMessage.style.animation = 'errorPop 350ms ease';
+
+  setTimeout(() => {
+    input.className.remove('error', 'success');
+    errorMessage.classList.remove('error', 'sucess');
+    errorMessage.style.animation = 'none';
+  }, 3000);
 }
 
-// function validateEmail(event) {
-//   event.preventDefault();
-
-//   // let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-//   // for (let i = 0; i < errorMessage.length; i++) {
-//   //   if (!emailInput.value.match(validRegex)) {
-//   //     errorMessage[i].textContent = 'Invalid Email, Please check your email';
-//   //     // emailInput.classList.add('error');?\
-//   //     event.target.email.classList.add('error');
-//   //     errorMessage[i].classList.add('error');
-//   //     errorMessage[i].style.animation = 'errorPop 350ms ease';
-
-//   //     setTimeout(() => {
-//   //       emailInput.classList.remove('error');
-//   //       errorMessage[i].classList.remove('error');
-//   //       errorMessage[i].style.animation = 'none';
-//   //     }, 4000);
-//   //   } else {
-//   //     event.target.email.classList.add('success');
-//   //     errorMessage[i].classList.add('success');
-//   //     errorMessage[i].textContent = 'Email Sucessfully Submitted';
-//   //     errorMessage[i].style.animation = 'errorPop 350ms ease';
-
-//   //     setTimeout(() => {
-//   //       emailInput.classList.remove('success');
-//   //       errorMessage[i].classList.remove('success');
-//   //       errorMessage[i].style.animation = 'none';
-//   //     }, 4000);
-//   //   }
-//   // }
-// }
+function checkEmail(event) {
+  event.preventDefault();
+  const input = event.target.email;
+  const errorMessage = input.nextElementSibling;
+  if (!validateEmail(input.value)) {
+    setFormState(input, errorMessage, 'error', 'Invalid Email, Please check your email');
+  } else {
+    setFormState(input, errorMessage, 'success', 'Email Successfully Submitted');
+  }
+}
 forms.forEach((form) => {
   form.addEventListener('submit', (event) => checkEmail(event));
 });

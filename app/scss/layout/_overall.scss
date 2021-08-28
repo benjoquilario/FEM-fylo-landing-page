@@ -2,7 +2,8 @@
 
 .hero {
   position: relative;
-  margin-bottom: rem(150);
+
+  padding: 0 1rem rem(154);
 
   &__container {
     display: flex;
@@ -35,7 +36,7 @@
       flex: 1;
     }
     @include breakpoint-up(large) {
-      margin-top: rem(-77);
+      margin-top: rem(-61);
     }
   }
 
@@ -115,8 +116,7 @@
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
-  padding-top: rem(174);
-  margin-bottom: rem(19);
+  padding: rem(174) 0 rem(45);
   //background-color: #fafafa;
 
   @include breakpoint-up(medium) {
